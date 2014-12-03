@@ -6,16 +6,11 @@ package ThreadedWithLocks;
  * and open the template in the editor.
  */
 
-
-
 import java.text.DecimalFormat;
-import java.util.Random;
-
-import java.text.DecimalFormat;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MonteCarlo implements Runnable {
-    private Random rand = new Random();
+    private ThreadLocalRandom rand;
     private int count = 0;
     private SharedStates state;
     
@@ -31,8 +26,8 @@ public class MonteCarlo implements Runnable {
     
     public void run() {
         for(int a = 0; a < count; a++) {
-            double x = rand.nextDouble();
-            double y = rand.nextDouble();
+            double x = rand.current().nextDouble();
+            double y = rand.current().nextDouble();
             
             if(inCircle(x,y)) state.incInner();
             state.incOuter();

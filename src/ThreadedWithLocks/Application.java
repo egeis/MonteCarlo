@@ -17,9 +17,7 @@ import java.util.concurrent.Executors;
  */
 public class Application {
     
-    public Application() {
-    
-    }
+    private Application() {}
     
     public static void main(String[] args) throws InterruptedException {
        long start, end;
