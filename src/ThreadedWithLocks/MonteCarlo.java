@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class MonteCarlo implements Runnable {
     private Random rand = new Random();
-    private int circle, square, count = 0;
+    private int count = 0;
     private SharedStates state;
     
     public MonteCarlo(int count, SharedStates state) {
