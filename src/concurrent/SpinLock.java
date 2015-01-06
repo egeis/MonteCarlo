@@ -10,7 +10,8 @@ import java.util.concurrent.atomic.AtomicLong;
  * A spin lock requires a single atomic or synchronized call to a boolean, 
  * to prevent multiple threads from acquiring the lock at the same time.  Using
  * an AtomicBoolean the lock can be checked and set at the same time using the
- * <b>compareAndSet()</b> operator which returns the boolean comparison result and sets
+ * <b>compareAndSet()</b> non-interruptible atomic instruction which returns the boolean 
+ * comparison result,in some architectures the old value is returned instead, and sets
  * the indicated value if the comparison is <b>true</b>.
  * 
  * @author Richard Coan
